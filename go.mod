@@ -1,4 +1,4 @@
-module github.com/chrede88/L1nkrTemplate
+module github.com/alexsannikov/linktree
 
 go 1.23.3
 

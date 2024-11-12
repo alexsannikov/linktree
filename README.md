@@ -1,38 +1,24 @@
-# L1nkr - Template
+# linktree
 
-This is the theme template repository! **Please** follow the installation instructions below.
-If you're looking for the actual theme repository, follow this [link](https://github.com/chrede88/L1nkr).
+Please follow the instructions below to finish the setup of your new L1nkr site.
 
 ## Installation
 
-1) Use this template by pressing `Use this template`. **Don't fork this repository!**
-2) Wait 20s-30s and update the page. The files in your repo are getting populated.
-3) Add a LICENSE to your repo.
-4) Clone your version of the template to your local computer:
+1) Add a LICENSE to your repo.
+2) Clone your version of the template to your local computer:
 ```shell
-git clone https://github.com/<username>/<reponame>
+git clone https://github.com/alexsannikov/linktree
 ```
-5) Change the module name to match your github repo in `go.mod`.
-6) Modify `config/_default/hugo.yaml` and `config/_default/params.yaml` according to the configuration below.
-7) All images are stored in the `assets/` folder. You can group in subfolders if you like.
-8) Build a local version of your site by executing `hugo server`. You can see the site by navigating to `localhost:1313` (actual URL will be outputted in the CLI) in a browser.
-9) Add a new `icon.png` file to update the favicon. The png file should be 512px by 512px in size.
-
----
-
-## Features
-
-- Simple LinkTree theme, designed for mobile-first.
-- Automatically dark mode (based on system setttings).
-- Emoji support for a fun design.
-- More than 40 supported brand links.
-- Healthcheck endpoint (/healthcheck.json).
+2) Modify `config/_default/hugo.yaml` and `config/_default/params.yaml` according to the configuration below.
+3) Build a local version of your site by executing `hugo server`. You can see the site by navigating to `http://localhost:1313/linktree/`  (actual URL will be outputted in the CLI) in a browser.
+4) Add a new image to the `assets/` folder, using the same name as you specified in `params.yaml`.
+5) Add a new `icon.png` file to update the favicon. The png file should be 512px by 512px in size.
 
 ---
 
 ## Configuration
 
-See the [wiki](https://github.com/chrede88/L1nkr/wiki) for all info about configuration and how to easily deploy to Github Pages.
+See the [wiki](https://github.com/chrede88/L1nkr/wiki) for all info about configuration.
 
 ---
 
@@ -46,3 +32,19 @@ The best practice is to update to released and tested versions. To update to a s
   hugo mod get github.com/chrede88/L1nkr@vX.Y.Z
 ```
 Replace X,Y & Z with the corresponding version numbers. You can find the releases [here](https://github.com/chrede88/L1nkr/releases). Please check if any breaking changes are listed under the release you want to update to, before proceeding.
+
+---
+
+## Deploy on Github Pages
+You can very easily deploy your site using Github Pages. Included in this template is a Github Action workflow that will build and deploy your site to Github Pages automatically:+1:
+
+You can find the workflow here `.github/deploymentWorkflow/buildDeploy.yml`. To use this, move it to `.github/workflows/`.
+
+The workflow is already set up and ready to go, but go through it and spend some time to understand what's going on. Otherwise, it'll always be this black box of magic that you can't fix when it breaks!
+
+Last step: Go to Settings -> Pages -> Build and deployment -> Set the Source to "Github Actions".
+
+Next time you publish a release this workflow will build and deploy your site :tada:
+
+Your site will be published to the following URL:
+`https://alexsannikov.github.io/linktree`
